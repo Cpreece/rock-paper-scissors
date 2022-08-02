@@ -1,7 +1,8 @@
 let choices = ['Rock','Paper','Scissors']
+let playerSelection = prompt('Choose Your Weapon. (Rock, Paper or Scissors)')
 
 function getComputerChoice() {
-  console.log(choices[Math.floor(Math.random()*choices.length)]) 
+  return choices[Math.floor(Math.random()*choices.length)]
 };
 
-getComputerChoice();
+playRound(playerSelection, computerSelection)
