@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <script src="./RPS.js"></script>
+</head>
+<body>
+  <div class="game-input">
+    <form action="">
+      <label for="player_choice">Choose a weapon:</label>
+      <select id="player_choice" name="player_choice">
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+      </select>
+      <input type="button" onclick="playRound()" value="Fight!">
+    </form>
+  </div>
+  <div id="game-result">
+    
+  </div>
+</body>
+</html>
