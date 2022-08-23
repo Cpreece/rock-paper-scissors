@@ -4,8 +4,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock, Paper, Scissors mini-game</title>
-  <script src="./RPS.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./RPS.js" defer></script>
 </head>
 <body>
-  <button onclick="playGame()">Play Game</button>
+  <div class="container">
+    <div class="nav">
+      <div class="results" id="human">
+        <div class="player">Human</div>
+        <div class="score">0</div>
+      </div>
+      <div class="results" id="computer">
+        <div class="player">Machine</div>
+        <div class="score">0</div>
+      </div>
+    </div>
+    <div class="choices">
+      <div class="instructions">Choose Your Weapon</div>
+      <div class="reset inactive">
+        <button>Reset</button>
+      </div>
+      <div class="choices-inner">
+        <div class="choice" id="rock">Rock</div>
+        <div class="choice" id="paper">Paper</div>
+        <div class="choice" id="scissors">Scissors</div>
+      </div>
+    </div>
+    <div class="footer">I speak of none but the machine which is to come after me.</div>
+  </div>
 </body>
