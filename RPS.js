@@ -16,17 +16,7 @@ function getComputerChoice() {
 
 function playerInput(e) {
   playerChoice = this.id
-  if (playerScore + computerScore < 5) {
-    playRound(playerChoice, getComputerChoice())
-  } else {
-    document.querySelector('.reset').classList.toggle('inactive');
-    document.querySelector('.choices-inner').classList.toggle('inactive');
-    if (playerScore > computerScore) {
-      document.querySelector('.instructions').textContent = 'Congratulations. You\'ve beaten a helpless machine.'
-    } else {
-      document.querySelector('.instructions').textContent = 'By losing you have become meat for the machine.'
-    };
-  };
+  playRound(playerChoice, getComputerChoice())
   e.stopPropagation();
 };
   
@@ -49,28 +39,42 @@ function youTie(player, computer) {
     + capitalizeFirstLetter(computer);
 };
 
+function endGame(pScore, cScore) {
+  if (pScore === 3 || cScore === 3) {
+    document.querySelector('.reset').classList.toggle('inactive');
+    document.querySelector('.choices-inner').classList.toggle('inactive');
+    if (pScore > cScore) {
+      document.querySelector('.instructions').textContent = 'Congratulations. You\'ve beaten a helpless machine.'
+    } else {
+      document.querySelector('.instructions').textContent = 'By losing you have become meat for the machine.'
+    };
+  };
+};
+
 function playRound(playerSelection, computerSelection) {
   if (computerSelection === playerSelection) {
-    return youTie (playerSelection, computerSelection);
+    youTie (playerSelection, computerSelection);
   } else if (playerSelection === 'paper') {
-    if (computerSelection === 'rock') {
-      return youWin(playerSelection, computerSelection);
-    } else {
-      return youLose(playerSelection, computerSelection);
-    }
+      if (computerSelection === 'rock') {
+        youWin(playerSelection, computerSelection);
+      } else {
+        youLose(playerSelection, computerSelection);
+      }
   } else if (playerSelection === 'rock') {
-    if (computerSelection === 'scissors') {
-      youWin(playerSelection, computerSelection);
-    } else {
-      return youLose(playerSelection, computerSelection);
-    }
-  }  else if (playerSelection === 'scissors') {
-    if (computerSelection === 'paper') {
-      return youWin(playerSelection, computerSelection);
-    } else {
-      return youLose(playerSelection, computerSelection);
-    }
-  }
+      if (computerSelection === 'scissors') {
+        youWin(playerSelection, computerSelection);
+      } else {
+        youLose(playerSelection, computerSelection);
+      }
+  } else if (playerSelection === 'scissors') {
+      if (computerSelection === 'paper') {
+        youWin(playerSelection, computerSelection);
+      } else {
+        youLose(playerSelection, computerSelection);
+      }
+  };
+  console.log('endgame')
+  endGame(playerScore, computerScore)
 };
 
 function newGame() {

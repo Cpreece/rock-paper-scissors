@@ -47,6 +47,9 @@ button {
   border: none;
   cursor: pointer;
 }
+button::hover {
+  background-color: darkred;
+}
 div.inactive {
   display: none;
 }
@@ -66,6 +69,10 @@ div.inactive {
   font-size: 2em;
   font-weight: 800;
   cursor: pointer;
+  border-radius: .5rem;
+}
+.choice:hover {
+  background-color: black;
 }
 .footer {
   text-align: center;
